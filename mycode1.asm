@@ -1142,8 +1142,8 @@ sec_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 	IN3:MOV   AL , 00
 		MOV   DI , sec
@@ -1156,7 +1156,7 @@ sec_set:mov dx,portA
 		mov al,00
 		Cmp [si],al
  		jz  display1 
-        jmp display2
+        
 		
 	IN2:CALL   DEBOUNCE
 		MOV   SI , sec
@@ -1171,8 +1171,8 @@ sec_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
-        jz display1
- 		jmp display2
+        IRET
+ 		
 		
     IN4:MOV   AL , 59
 		MOV   DI , sec
@@ -1184,8 +1184,8 @@ sec_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
-        jz display1 
-        jmp display2
+        IRET
+        
 		
 min_set:mov dx,portA
      w2:IN AL ,dx
@@ -1210,8 +1210,8 @@ min_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1
- 		jmp display2
+        IRET
+ 		
 		
    		
 	IN7:MOV   AL , 00
@@ -1224,8 +1224,8 @@ min_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 	IN6:CALL   DEBOUNCE
 		MOV   SI , min
@@ -1240,8 +1240,8 @@ min_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1 
-        jmp display2
+ 		IRET
+        
 		
 	IN8:MOV   AL , 59
 		MOV   DI , min
@@ -1253,8 +1253,8 @@ min_set:mov dx,portA
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 hr_set:mov dx,portA
      w3:IN AL ,dx
@@ -1289,8 +1289,8 @@ IN9_24hr:CALL   DEBOUNCE
 		mov si,form
 		mov al,00
 		Cmp [si],al
-        jz display1
- 		jmp display2
+        IRET
+ 		
 		
    IN11:MOV   AL , 00
         MOV   DI , hr1
@@ -1302,8 +1302,8 @@ IN9_24hr:CALL   DEBOUNCE
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1 
-        jmp display2
+ 		IRET
+        
 		
 IN9_12hr:CALL   DEBOUNCE
         MOV   SI ,  hr2			; incrementing hrs for 12 hr format
@@ -1318,8 +1318,8 @@ IN9_12hr:CALL   DEBOUNCE
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1 
-        jmp display2
+ 		IRET
+        
 		
    IN12:MOV   AL , 01
        	MOV   DI , hr2
@@ -1331,8 +1331,8 @@ IN9_12hr:CALL   DEBOUNCE
        	mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1
- 		jmp display2
+        IRET
+ 		
 		
 IN10_24hr:CALL   DEBOUNCE
         MOV   SI ,  hr1			; decrementing hrs for 24 hr format
@@ -1347,8 +1347,8 @@ IN10_24hr:CALL   DEBOUNCE
 		mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 	IN13:MOV   AL , 23
         MOV   DI , hr1
@@ -1360,8 +1360,8 @@ IN10_24hr:CALL   DEBOUNCE
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 IN10_12hr:CALL   DEBOUNCE
         MOV   SI ,  hr2			; decrementing hrs for 12 hr format
@@ -1376,8 +1376,8 @@ IN10_12hr:CALL   DEBOUNCE
 		mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1
- 		jmp display2
+        IRET
+ 		
 		
 	IN14:MOV   AL , 12
         MOV   DI , hr2
@@ -1389,8 +1389,8 @@ IN10_12hr:CALL   DEBOUNCE
         mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1 
-        jmp display2
+        IRET
+        
 		
 date_set:mov dx,portA
       w4:IN AL,dx
@@ -1415,8 +1415,8 @@ date_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al
-        jz display1 
-        jmp display2
+        IRET
+        
 		
    	IN17:MOV   AL , 01
         MOV   DI , date
@@ -1428,8 +1428,8 @@ date_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al 
-        Jz display1
- 		jmp display2
+        IRET
+ 		
 		
    IN16:CALL   DEBOUNCE
         MOV   SI , date
@@ -1444,8 +1444,8 @@ date_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1
- 		jmp display2	
+        IRET
+ 			
 		
 IN18:	MOV   AL , 31
         MOV   DI , date
@@ -1457,8 +1457,8 @@ IN18:	MOV   AL , 31
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 
 month_set:mov dx,portA
       w5:IN AL,dx
@@ -1483,8 +1483,8 @@ month_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al
-        jz display1 
-        jmp display2
+        IRET
+        
 		
    	IN51:MOV AL , 01
         MOV DI,month
@@ -1496,8 +1496,8 @@ month_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al 
-        Jz display1
- 		jmp display2
+        IRET
+ 		
 		
    IN60:CALL DEBOUNCE
         MOV SI,month
@@ -1512,8 +1512,8 @@ month_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al 
-        jz display1
- 		jmp display2	
+        IRET
+ 			
 		
 IN61:	MOV   AL , 12
         MOV   DI ,month
@@ -1525,8 +1525,8 @@ IN61:	MOV   AL , 12
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
 year_set:mov dx,portA
      w6:IN al,dx
@@ -1548,8 +1548,8 @@ year_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
 		
    IN20:CALL DEBOUNCE
         mov si,year
@@ -1561,8 +1561,8 @@ year_set:mov dx,portA
         mov si,form
 		mov al,00
 		Cmp [si],al
- 		jz display1
- 		jmp display2
+ 		IRET
+ 		
         		
 alarm_min_set:mov dx,portA
      w7:IN AL,dx
